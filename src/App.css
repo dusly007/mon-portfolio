@@ -553,3 +553,24 @@ section {
     text-align: center;
   }
 }
+/* Bouton de téléchargement du CV */
+.btn-cv {
+  display: inline-block;
+  padding: 13px 24px;
+  border: 2px solid #64748b;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-cv:hover {
+  background-color: #334155;
+  border-color: #38bdf8;
+}
+
+/* Permet aux boutons de passer à la ligne */
+.home-buttons {
+  flex-wrap: wrap;
+}
