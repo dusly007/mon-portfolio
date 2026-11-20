@@ -1,6 +1,10 @@
+import Hero3D from "../components/Hero3D";
+import TechBadges from "../components/TechBadges";
+
 function Home() {
     return (
         <section id="home" className="home">
+            {/* Partie gauche : présentation */}
             <div className="home-content">
                 <p className="home-intro">Bonjour, je suis</p>
 
@@ -23,6 +27,7 @@ function Home() {
                     <a href="#contact" className="btn-secondary">
                         Me contacter
                     </a>
+
                     <a
                         href="/documents/CV_Stage_Dusly_Nestor.pdf"
                         download="CV_Stage_Dusly_Nestor.pdf"
@@ -31,6 +36,12 @@ function Home() {
                         Télécharger mon CV ↓
                     </a>
                 </div>
+            </div>
+
+            {/* Partie droite : ordinateur 3D et technologies */}
+            <div className="hero-visual">
+                <Hero3D />
+                <TechBadges />
             </div>
         </section>
     );

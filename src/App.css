@@ -574,3 +574,188 @@ section {
 .home-buttons {
   flex-wrap: wrap;
 }
+
+/* =========================================
+   ACCUEIL AVEC ORDINATEUR 3D
+   ========================================= */
+
+/* Présentation à gauche, ordinateur à droite */
+.home {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+
+/* Empêche le texte de dépasser sa colonne */
+.home-content {
+  min-width: 0;
+}
+
+/* Zone contenant l'ordinateur et les badges */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  min-height: 520px;
+  min-width: 0;
+  isolation: isolate;
+}
+
+/* Zone de rendu Three.js */
+.hero-3d {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-3d canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   BADGES TECHNOLOGIQUES FLOTTANTS
+   ========================================= */
+
+.tech-badges-container {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.floating-tech {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 11px 16px;
+
+  border: 1px solid rgba(147, 197, 253, 0.24);
+  border-radius: 13px;
+
+  background: rgba(18, 32, 63, 0.88);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.17);
+  backdrop-filter: blur(12px);
+
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Positions des six badges */
+
+.floating-tech-top-left {
+  top: 7%;
+  left: 3%;
+}
+
+.floating-tech-top-right {
+  top: 13%;
+  right: 0;
+}
+
+.floating-tech-middle-left {
+  top: 46%;
+  left: 0;
+}
+
+.floating-tech-middle-right {
+  top: 47%;
+  right: 0;
+}
+
+.floating-tech-bottom-left {
+  bottom: 12%;
+  left: 4%;
+}
+
+.floating-tech-bottom-right {
+  bottom: 9%;
+  right: 2%;
+}
+
+/* =========================================
+   RESPONSIVE : TABLETTES ET TÉLÉPHONES
+   ========================================= */
+
+@media (max-width: 1000px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hero-visual {
+    max-width: 650px;
+    margin: 0 auto;
+    height: 420px;
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-visual {
+    height: 350px;
+    min-height: 350px;
+  }
+
+  .floating-tech {
+    min-height: 32px;
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
+  .floating-tech-top-left {
+    top: 2%;
+    left: 1%;
+  }
+
+  .floating-tech-top-right {
+    top: 5%;
+    right: 1%;
+  }
+
+  .floating-tech-middle-left {
+    top: 45%;
+    left: 0;
+  }
+
+  .floating-tech-middle-right {
+    top: 45%;
+    right: 0;
+  }
+
+  .floating-tech-bottom-left {
+    bottom: 1%;
+    left: 5%;
+  }
+
+  .floating-tech-bottom-right {
+    bottom: 1%;
+    right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-visual {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .floating-tech {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-tech {
+    animation: none;
+  }
+}
